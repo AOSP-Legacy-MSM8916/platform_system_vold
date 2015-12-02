@@ -98,6 +98,10 @@ ifeq ($(TARGET_USERIMAGES_USE_EXT4), true)
   endif
 endif
 
+ifeq ($(TARGET_KERNEL_HAVE_EXFAT),true)
+  vold_cflags += -DCONFIG_KERNEL_HAVE_EXFAT
+endif
+
 include $(CLEAR_VARS)
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
